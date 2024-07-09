@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Проект: Страница регистрации и авторизации</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container overflow-hidden text-center">
+        <h1 class="title">Добро пожаловать!</h1>
+        <div class="row gx-5">
+            <div class="col">
+                <div class="p-3 box-input">
+                    <h2>Впервые...? <br> Зарегистрироваться!</h2>
+                    <p class="descr">
+                        Перейти на страницу регистриции!
+                    </p>
+                    <div class="btn-box">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">ЖМИ Для
+                            регистрации</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 box-input">
+                    <h2>Пройти авторизацию <br> и войти!</h2>
+                    <p class="descr">
+                        Пройти авторизацию!
+                    </p>
+                    <div class="btn-box">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Авторизоваться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Регистрация окно справа -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Регистрация</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Зарегистрируйтесь чтобы полноцено пользоваться приложением.</p>
+            <div class="forma-regisctr">
+                <h3 class="form-title">Создание WEB ID</h3>
+                <p class="form-descr">Уже есть WEB ID? <a href="">Найти его здесь ></a>
+                </p>
+                <form action="/registr.php" method="post">
+                    <input type="text" name="user-name" id="user-name" placeholder="Имя">
+                    <input type="text" name="fisrt-name" id="fisrt-name" placeholder="Фамилия">
+                    <hr>
+                    <label for="date-user" class="form-descr">День рождения:</label>
+                    <input type="date" name="date-user" id="date-user" placeholder="День рождения">
+                    <label for="country-user" class="form-descr">Страна:</label>
+                    <select id="country-user" name="country-user" title="Дата рождения">
+                        <option value="russia">Россия</option>
+                        <option value="china">Китай</option>
+                    </select>
+                    <input type="text" name="email" id="email" placeholder="Почта">
+                    <hr>
+                    <input type="password" name="password" id="password" placeholder="Пароль">
+                    <input type="password" name="password-true" id="password-true" placeholder="Повторите пароль">
+                    <div>
+                        <button type="submit" class="btn btn-primary">Продолжить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Окно авторизации -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Авторизоваться</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <div class="forma-regisctr">
+              <h3 class="form-title">Войти в WEB ID</h3>
+              <p class="form-descr"><a href="">Забыли WEB ID? ></a>
+              </p>
+              <form action="">
+                  <input type="text" name="email" id="email" placeholder="Почта">
+                  <hr>
+                  <input type="password" name="password" id="password" placeholder="Пароль">
+                  <p class="form-descr">ИЛИ</p>
+                  <div><img src="/img/icon.png" alt=""></div>
+                  <div>
+                      <button type="submit" class="btn btn-primary">Войти</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
